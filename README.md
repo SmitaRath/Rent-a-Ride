@@ -1,16 +1,14 @@
 # Rent-A-Ride
+
+Rent-a-Ride is an online platform for the users to book a ride which are posted by the fellow users and they can also provide feedback about their past renting experience.
+
+###Group Members
+##Smita Rath
+##Jiashu Wang
+##Vishal Manjunath
+##Shaunak Saklikar
+
 Steps to run the project :
-
-Seed file will create lot of users but these two users can be used for owner and customer
-
-Owner
-Username - KristainParker@gmail.com 
-password - mydognameistom
-
-Customer
-Username - aolanie.salloum@hotmail.com
-password - aolanie1234
-
 
 1. npm install
 2. npm run seed
