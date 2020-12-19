@@ -4,8 +4,11 @@ Rent-a-Ride is an online platform for the users to book a ride which are posted 
 
 ## Group Members
 Smita Rath
+
 Jiashu Wang
+
 Vishal Manjunath
+
 Shaunak Saklikar
 
 Steps to run the project :
