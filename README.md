@@ -11,7 +11,7 @@ Vishal Manjunath
 
 Shaunak Saklikar
 
-Steps to run the project :
+## Steps to run the project :
 
 1. npm install
 2. npm run seed
