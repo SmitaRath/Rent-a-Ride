@@ -1,0 +1,63 @@
+<div class="topnav">
+    <a href="/home">Home</a>
+    <a href="/users/rented">Rented Car</a>
+    <a href="/users/history">Past Rented Cars</a>
+    <a href="/users/posted">My Cars</a>
+    <a href="/users/orders">Orders</a>
+     <a href="/users/saved" id="saved-id">Saved Cars</a>
+     <a href="/users/profile" id="profile-id">Profile</a>
+     <a href="/users/editUser" id="edit-id">Edit Profile</a>
+     <a href="/cars/createCar" id="car-id">Post Car</a>
+    <a href="/users/logout" id="logout-id">Logout</a>
+    </div> 
+
+
+<h1>Renting form</h1>
+
+
+
+<form method = "POST" action = "/rentingInfo/find_date"  id = "renting_info_form">
+    
+    <label id = "user_id">User: {{user_id}}</label><br>
+
+    <label id = "car_id">Car: {{car_id}}</label><br>
+
+    <input value = {{price}} id = "single_price" hidden>
+
+    <label id = "price">Price: 0</label><br>
+    
+    <label>startDate</label>
+    <input booked_date = {{booked_date_arr}} type="text" id = "start_date" class = "date_input" name = "start_date"><br>
+
+    <label>endDate</label>
+    <input type="text" id = "end_date" class = "date_input" name = "end_date" disabled><br>
+
+    <input type = "submit" value = "Submit" class = "Submit">
+</form>
+
+
+{{#if error_flag}}
+    <p class = "error_info">{{message}}</p>
+{{/if}}
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+
+
+<script src="/public/js/renting_info.js"></script>
+<!--
+<script>
+    $('#start_date').change(function(){
+    var toDate = $('#start_date').val();
+    $('#end_date').prop("disabled", false);
+    $("#end_date").attr("min", toDate);
+    $("#end_date").val(toDate);
+});
+</script>
+-->

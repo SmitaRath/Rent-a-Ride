@@ -1,0 +1,36 @@
+  <div class="topnav">
+    <a href="/home">Home</a>
+    <a href="/users/rented">Rented Car</a>
+    <a href="/users/history">Past Rented Cars</a>
+    <a href="/users/posted">My Cars</a>
+    <a href="/users/orders">Orders</a>
+     <a href="/users/saved" id="saved-id">Saved Cars</a>
+     <a href="/users/profile" id="profile-id">Profile</a>
+     <a href="/users/editUser" id="edit-id">Edit Profile</a>
+     <a href="/cars/createCar" id="car-id">Post Car</a>
+    <a href="/users/logout" id="logout-id">Logout</a>
+    </div> 
+
+<form id = "confirm_form">
+    <label id = "order_id">Order Id: {{new_rent._id}}</label><br>
+    <label>From: {{new_rent.startDate}}</label><br>
+    <label>To: {{new_rent.endDate}}</label><br>
+    <label>Price: {{new_rent.totalPrice}}</label><br>
+    <label><a href = {{link_user}} target = "_blank">user: {{user_name}}</a></label><br>
+    <label id = "car_info"><a href = {{link_car_owner}} target = "_blank">car: {{car_name}}</a></label><br>
+    <label id = "message">Pending</label><br>
+
+    <input id = "is_login" value = {{is_login}} hidden>
+    <input id = "state" value = {{new_rent.bookingStatus}} hidden>
+
+    <button type = "button" id = "accept_button">Accept</button>
+    <button type = "button" id = "reject_button">Reject</button><br>
+
+</form>
+
+{{#if error_flag}}
+    <p class = "error_info">{{message}}</p>
+{{/if}}
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script src="/public/js/order_button.js"></script>

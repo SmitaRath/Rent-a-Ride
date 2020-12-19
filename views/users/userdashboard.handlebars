@@ -1,0 +1,228 @@
+    <div class="topnav">
+    <a href="/home">Home</a>
+    <a href="/users/rented">Rented Car</a>
+    <a href="/users/history">Past Rented Cars</a>
+    <a href="/users/posted">My Cars</a>
+    <a href="/users/orders">Orders</a>
+     <a href="/users/saved" id="saved-id">Saved Cars</a>
+     <a href="/users/profile" id="profile-id">Profile</a>
+       <a href="/users/editUser" id="edit-id">Edit Profile</a>
+        <a href="/cars/createCar" id="car-id">Post Your Car</a>
+    <a href="/users/logout" id="logout-id">Logout</a>
+    </div>
+
+  
+    <h1>{{heading}}</h1>
+
+    <div>
+      
+ <form class="dashboard-class">
+{{#if pastRentedFlag}}
+ <table>
+  <thead>
+    <tr>
+      <th scope="col">Car Image</th> 
+     <th>Car Page</th>
+     <th>Brand</th>
+     <th scope="col">Model</th>
+     <th scope="col">Type</th>
+     <th scope="col">Booking Start Date</th>
+     <th scope="col">Booking End Date</th>
+     <th scope="col">Booking Status</th>
+     <th scope="col">Total Price</th> 
+      <th scope="col">Add Review</th> 
+      
+    </tr>
+  </thead>
+  <tbody>
+     {{#each cars}} 
+    <tr>
+      <td><img src="/home/carImage/{{carId}}" onerror="this.src='/public/images/car_no_image.jpg'" alt="Car Picture" class="carDashboardPic"></td>
+      <td><a href="/cars/profile/{{carId}}">Car Details</a></td>
+      <td>{{brand}}</td>
+      <td>{{model}}</td>
+      <td>{{type}}</td>
+      <td>{{startDate}}</td>
+      <td>{{endDate}}</td>
+      {{#if status}}
+      <td>Approved</td>
+      {{else}}
+      <td>Rejected</td>
+      {{/if}}
+      <td>{{totalPrice}}</td>
+      {{#if review}}
+       <td><a href="/reviews/postReview/{{_id}}">Post Review</a></td>
+       {{else}}
+       <td>Posted or Not Required</td>
+       {{/if}}
+      </tr>
+   
+    {{/each}}
+  </tbody>
+</table>
+{{/if}}
+
+{{#if rentedFlag}}
+ <table>
+  <thead>
+    <tr>
+       <th scope="col">Car Image</th> 
+     <th>Car Page</th>
+     <th>Brand</th>
+     <th scope="col">Model</th>
+     <th scope="col">Type</th>
+     <th scope="col">Booking Start Date</th>
+     <th scope="col">Booking End Date</th>
+     <th scope="col">Booking Status</th>
+     <th scope="col">Total Price</th> 
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td><img src="/home/carImage/{{cars.carId}}" onerror="this.src='/public/images/car_no_image.jpg'" alt="Car Picture" class="carDashboardPic"></td>
+     
+        <td><a href="/cars/profile/{{cars.carId}}">Car Details</a></td>
+      <td>{{cars.brand}}</td>
+      <td>{{cars.model}}</td>
+      <td>{{cars.type}}</td>
+      <td>{{cars.startDate}}</td>
+      <td>{{cars.endDate}}</td>
+      {{#if cars.status}}
+      <td>Approved</td>
+      {{else}}
+      <td>Pending for Approval</td>
+      {{/if}}
+      <td>{{cars.totalPrice}}</td>
+    </tr>
+  </tbody>
+</table>
+{{/if}}
+
+
+
+{{#if postedFlag}}
+ <table class="table-center">
+  <thead>
+    <tr>
+       <th scope="col">Car Image</th> 
+     <th>Car Page</th>
+     <th>Brand</th>
+     <th scope="col">Model</th>
+     <th scope="col">Type</th>
+     <th scope="col">Color</th>
+     <th scope="col">License Plate</th>
+      <th scope="col">Make Year</th>
+     <th scope="col">Rating</th>
+     <th scope="col">Price</th>
+     <th scope="col">Add Reply</th> 
+    </tr>
+  </thead>
+  <tbody>
+     {{#each cars}} 
+    <tr>
+      <td><img src="/home/carImage/{{_id}}" onerror="this.src='/public/images/car_no_image.jpg'" alt="Car Picture" class="carDashboardPic"></td>
+     
+      <td><a href="/cars/profile/{{_id}}">Car Details</a></td>
+      <td>{{brand}}</td>
+      <td>{{model}}</td>
+      <td>{{type}}</td>
+      <td>{{color}}</td>
+      <td>{{licensePlate}}</td>
+      <td>{{makeYear}}</td>
+      <td>{{rating}}</td>
+      <td>{{price}}</td>
+      <td><a href="/reviews/reply/{{_id}}">Reply To Review</a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{/if}}
+
+{{#if savedFlag}}
+ <table class="table-center">
+  <thead>
+    <tr>
+       <th scope="col">Car Image</th> 
+     <th>Car Page</th>
+     <th>Brand</th>
+     <th scope="col">Model</th>
+     <th scope="col">Type</th>
+     <th scope="col">Color</th>
+     <th scope="col">License Plate</th>
+      <th scope="col">Make Year</th>
+     <th scope="col">Rating</th>
+     <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+     {{#each cars}} 
+    <tr>
+      <td><img src="/home/carImage/{{_id}}" onerror="this.src='/public/images/car_no_image.jpg'" alt="Car Picture" class="carDashboardPic"></td>
+     
+      <td><a href="/cars/profile/{{_id}}">Car Details</a></td>
+      <td>{{brand}}</td>
+      <td>{{model}}</td>
+      <td>{{type}}</td>
+      <td>{{color}}</td>
+      <td>{{licensePlate}}</td>
+      <td>{{makeYear}}</td>
+      <td>{{rating}}</td>
+      <td>{{price}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{/if}}
+
+
+{{#if orderFlag}}
+ <table>
+  <thead>
+    <tr>
+     <th scope="col">Car Image</th> 
+     <th>Car Page</th>
+     <th>Brand</th>
+     <th scope="col">Model</th>
+     <th scope="col">Type</th>
+     <th scope="col">License Plate</th>
+     <th scope="col">Booking Start Date</th>
+     <th scope="col">Booking End Date</th>
+     <th scope="col">Booking Status</th>
+     <th scope="col">Total Price</th> 
+     <th scope="col">Current Status</th> 
+      <th scope="col">Approval/Rejection</th> 
+    </tr>
+  </thead>
+  <tbody>
+     {{#each cars}} 
+    <tr>
+       <td><img src="/home/carImage/{{carId}}" onerror="this.src='/public/images/car_no_image.jpg'" alt="Car Picture" class="carDashboardPic"></td>
+     
+      <td><a href="/cars/profile/{{carId}}">Car Details</a></td>
+      <td>{{brand}}</td>
+      <td>{{model}}</td>
+      <td>{{type}}</td>
+      <td>{{licensePlate}}</td>
+      <td>{{startDate}}</td>
+      <td>{{endDate}}</td>
+      <td>{{bookingStatus}}</td>
+      <td>{{totalPrice}}</td>
+      <td>{{currentStatus}}</td>
+      {{#if pfa}}
+       <td><a href="/rentingInfo/confirm/{{_id}}">Approve/Reject</a></td>
+       {{else}}
+       <td>Done</td>
+       {{/if}}
+      </tr>
+   
+    {{/each}}
+  </tbody>
+</table>
+{{/if}}
+
+{{#if Message}}
+<p class="message-class">{{Message}}</p>
+{{/if}}
+
+</form>
+</div>

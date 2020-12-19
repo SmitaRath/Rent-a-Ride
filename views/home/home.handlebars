@@ -1,0 +1,119 @@
+    <div class="topnav">
+    {{#if login}}
+    <a href="/users/profile"> My Profile</a>
+     <a href="/users/logout" id="logout-id">Logout</a>
+    {{else}}
+    <a href="/users/login">Login</a>
+    <a href="/users/createUser">Sign up</a>
+    {{/if}}
+    </div>
+    
+    <br>
+    <br>
+
+    <h1>Choose your favorite Car</h1>
+
+    <br>
+    <br>
+   
+  
+    <form class="search-form" method="POST" action="/home/search">
+    <label>
+    Zip Code
+    <input type="number" name="zip" placeholder="Zip Code">
+    </label>
+    <label>
+  
+    Pickup Date
+    <input type="date" name="fromDate" id="fromDate" min="{{minDate}}">
+    </label>
+    <label>
+    Drop off Date
+    <input type="date" name="toDate" id="toDate" disabled>
+    </label>
+    <label>
+    Type Of Car
+    <input type="text" name="type" placeholder="Type Of Car">
+    </label>
+    <label>
+        <br>
+        <br>
+    Brand
+    <input type="text" name="brand" placeholder="Brand">
+    </label>
+    <label>
+    Model
+    <input type="text" name="model" placeholder="Model">
+    </label>
+    <br>
+    <br>
+    <button type="submit">Search</button>
+    
+    {{#if login}}
+    {{#if sortFlag}}
+    <br>
+    <br>
+    <label>
+      Sort the search result
+   <select name="sort">
+    <option value="">Select</option>
+     <option value="price">Price</option>
+     <option value="rating">Rating</option>
+   </select>
+    </label>
+    <button type="submit">Sort</button>
+    {{/if}}
+    {{/if}}
+
+</form>
+<br>
+<br>
+
+
+{{#if availFlag}}
+
+{{#if login}}
+{{else}}
+<form class="dashboard-class">
+  <p class="message-class">Please login to book a ride.</p>
+</form>
+{{/if}}
+
+   
+
+<div class="row">
+  {{#each cars}}
+  <div class="column">
+    <div class="card">
+       <img src="/home/carImage/{{_id}}" onerror="this.src='/public/images/car_no_image.jpg'" alt="Car Picture" class="carHomePic">
+      {{#if ../login}}
+      <p class="homecarheading"><a href="/cars/profile/{{_id}}" target="_blank">{{brand}} {{model}}</a></p>
+      {{else}}
+      <p class="homeheading">{{brand}} {{model}}</p>
+      {{/if}}
+      <p>Type: {{type}}</p>
+      <p>Color: {{color}}</p>
+      <p>Rating: {{rating}}</p>
+      <p>Price: {{price}}/day</p>
+    </div>
+  </div>
+  {{/each}}
+</div>
+
+
+{{else}}
+<form>
+    <p>{{Message}}</p>
+</form>
+{{/if}}
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+   $('#fromDate').change(function(){
+    var toDate = $('#fromDate').val();
+    $('#toDate').prop("disabled", false);
+    $("#toDate").attr("min", toDate);
+    $("#toDate").val(toDate);
+ });
+</script>

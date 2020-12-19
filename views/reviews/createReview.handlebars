@@ -1,0 +1,64 @@
+<h2>Write Review for {{carName}}</h2>
+Please write review about the car facilities and the service provided by the owner.
+<div class="col-sm-12 col-md-4">
+    <form id="newReviewForm" method="POST" action="/reviews/submitReview">
+        <label>Overall Rating: 
+            <select id="newRating" name="rating" required>
+                 <option value="">select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </label><br><br>
+        <label>Car Condition: 
+            <select id="newCarCondition" name="carCondition" required>
+                 <option value="">select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </label><br><br>
+        <label>Owner Service: 
+            <select id="newOwnerService" name="ownerService" required>
+                 <option value="">select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </label><br><br>
+        <label>Car Pick Ease: 
+            <select id="newCarPickUp" name="carPickUp" required>
+                 <option value="">select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </label><br><br>
+        <label>Cleanliness: 
+            <select id="newCleaniness" name="cleanliness" required>
+                 <option value="">select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </label><br><br>
+        <label>Comments: 
+            <textarea id="newComment" name="comment" required></textarea>
+        </label><br>
+        <input type="submit" value="Submit Review"/>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src ="../public/js/reviews.js"></script>
+

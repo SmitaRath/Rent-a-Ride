@@ -1,0 +1,41 @@
+<section id="loginsection-id">
+
+<div class="topnav">
+    <a href="/home">Home</a>
+    <a href="/users/createUser">Sign up</a>
+</div> 
+
+    <h1>Login</h1>
+<div>
+    <form id="loginform-id"  class="gjh">
+            <label>
+            Username
+            <input id="email-id" name="emailID" placeholder="Email ID" value="{{users.emailID}}" required>
+            </label>
+            <br><br>
+            <label>
+                Password
+            <input id="password-id" name="password" type="password"  placeholder="password" required>
+            </label>
+            <br>
+            <br>
+            <button type=submit>Login</button>
+        
+
+    <div id="errorlist-id" class="error">
+    {{#if error}}
+    <p>{{message}}</p>
+    {{/if}}
+    </div>
+    </form>
+</div>
+
+
+
+</section>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+    <script src="/public/js/login.js"></script>

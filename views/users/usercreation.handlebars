@@ -1,0 +1,77 @@
+
+ <div class="topnav">
+    <a href="/home">Home</a>
+    <a href="/users/login">Login</a>
+</div>
+<h1>Profile Creation</h1>
+<div>
+    <form id="usercreation-form-id" method="POST" action="/users/createUser" >
+    <label>
+        First Name *
+        <input type="text" name="firstName" id="firstName-id" placeholder="First Name" value="{{users.firstName}}" required>
+    </label>
+    <br>
+    <br>
+    <label>
+        Last Name 
+        <input type="text" name="lastName" id="lastName-id" placeholder="Last Name" value="{{users.lastName}}">
+    </label>
+    <br>
+    <br>
+    <label>
+        Date Of Birth *
+        <input type="date" name="dob" id="dob-id" required value="{{users.dob}}">
+    </label>
+    <br>
+    <br>
+    <label>
+        Email Id/Username *
+        <input type="email" name="emailID" id="email-id" placeholder="xyz@abc.xyz" required value="{{users.emailID}}">
+    </label>
+    <br>
+    <br>
+    <label>
+        Password *
+        <input type="password" name="password" id="password-id" required placeholder="password">
+    </label>
+    <br>
+    <br>
+    <label>
+        Confirm Password *
+        <input type="password" name="confirm" id="confirm-id" required placeholder="confirm password">
+    </label>
+    <br>
+    <br>
+    <label> 
+        Driver's License Number *
+        <input name="driverLicense" id="driverLicense-id" placeholder="[A-Za-z0-9]" required value="{{users.driverLicense}}">
+    </label>
+    <br>
+    <br>
+    <label>
+        Zip Code *
+        <input name="zip" type="number" id="zip-id" placeholder="Zip Code" required value="{{users.zip}}">
+    </label>
+    <br>
+    <br>
+    <button type="submit" id="submit-id">Create Account</button>
+     <input type="reset" value="Reset"/>
+    
+
+    <div id="diverror-id" class="error">
+    <ul id="errorlist-id">
+      {{#if hasErrors}}
+    {{#each errors}}
+    <li>
+      {{this}}
+    </li>
+    {{/each}}
+    {{/if}}
+   </ul>
+   </div>
+</form>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src ="../public/js/users.js"></script>
+
+

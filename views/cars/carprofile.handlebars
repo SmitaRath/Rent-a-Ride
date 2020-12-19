@@ -1,0 +1,187 @@
+<div class="topnav">
+    <a href="/home">Home</a>
+    <a href="/users/rented">Rented Car</a>
+    <a href="/users/history">Past Rented Cars</a>
+    <a href="/users/posted">My Cars</a>
+    <a href="/users/orders">Orders</a>
+    <a href="/users/saved" id="saved-id">Saved Cars</a>
+    <a href="/users/profile" id="profile-id">Profile</a>
+    <a href="/users/editUser" id="edit-id">Edit Profile</a>
+    <a href="/cars/createCar" id="car-id">Post Car</a>
+    <a href="/users/logout" id="logout-id">Logout</a>
+</div>
+
+<h1>{{cars.brand}} - {{cars.model}}</h1>
+<h2>Price/day: {{cars.price}}</h2>
+<div>
+   {{#if carprofileFlag}}
+  
+        {{#if cars.images}}   
+          <div class="slide">
+
+            
+             {{#each cars.images}}
+             
+             <img src="/cars/carpics/{{@index}}" onerror="this.src='/public/images/car_no_image.jpg'" alt="Car Pictures" class="carPicture">
+              
+             {{/each}}
+        </div>
+             {{else}}
+             <img src='/public/images/car_no_image.jpg' alt="Car Picture" class="carProfileNA">
+              {{/if}}
+                  <br>
+    <br>  
+
+    <div>
+    {{#if editFlag}}
+    <form action="/cars/upload/carPictures/{{cars._id}}" enctype="multipart/form-data" method="POST">
+    <h3>Update your car pictures</h3>
+    <br>
+    <br>
+    <label>
+         <input type="file" name="carPictures" accept=".png, .jpeg, .jpg" class="btn" multiple required/>
+    </label>
+    <input type="submit" value="Upload and Submit"/>
+    </form>
+    {{/if}}
+    </div>
+
+    <br>
+    <br>
+   
+    <form id="carprofile-form-id">
+ 
+        <h3>Car Details</h3>
+        <br>
+        <br>
+
+        <label>
+            Owned By
+            <input type="text" name="ownedBy" id="ownedByCP-id" placeholder="Owned By" value="{{user.firstName}} {{user.lastName}}" required disabled>
+        </label>
+        <br>
+        <br>
+        <label>
+            Brand
+            <input type="text" name="brand" id="brandCP-id" placeholder="Brand" value="{{cars.brand}}" required disabled>
+        </label>
+        <br>
+        <br>
+        <label>
+        Model
+        <input type="text" name="model" id="modelCP-id" placeholder="Model" value="{{cars.model}}" required disabled>
+        </label>
+        <br>
+        <br>
+        <label>
+            Make Year 
+            <input type="number" name="makeYear" id="makeYearCP-id" placeholder="Make Year" value="{{cars.makeYear}}" required disabled> 
+        </label>
+        <br>
+        <br>
+        <label>
+            Type
+            <input type="text" name="type" id="typeCP-id" placeholder="Type" value="{{cars.type}}" required disabled>
+        </label>
+        <br>
+        <br>
+        <label>
+            Color
+            <input type="text" name="color" id="colorCP-id" placeholder="Color" value="{{cars.color}}" required disabled>
+        </label>
+        <br>
+        <br>
+        <label>
+            Features
+            <input type="text" name="features" id="featuresCP-id" placeholder="Features" value="{{cars.features}}" required disabled>
+        </label>
+        <br>
+        <br>
+        <label>
+            No of Passengers
+            <input type="number" name="noOfPassengers" id="noOfPassengersCP-id" placeholder="No of Passengers" value="{{cars.noOfPassengers}}" required disabled>
+        </label>
+        <br>
+        <br>
+        <label>
+            Boot Space
+            <input type="number" name="bootSpace" id="bootSpaceCP-id" placeholder="Boot Space" value="{{cars.bootSpace}}" required disabled>
+        </label>
+          
+        <br>
+        <br>
+        
+            <h3>Pick-Up and Drop Location</h3>
+
+                <label>
+                    House No:
+                    <input type="number" name="houseNo" id="houseNoCP-id" placeholder="House No" value="{{cars.houseNo}}" required disabled>
+                </label>
+                <br>
+                <br>
+                <label>
+                    Street
+                    <input type="text" name="street" id="street-id" placeholder="Street" value="{{cars.street}}" required disabled>
+                </label>
+                <br>
+                <br>
+                <label>
+                    City
+                    <input type="text" name="city" id="city-id" placeholder="City" value="{{cars.city}}" required disabled>
+                </label>
+                <br>
+                <br>
+                <label>
+                    State
+                    <input type="text" name="state" id="state-id" placeholder="State" value="{{cars.state}}" required disabled>
+                </label>
+                <br>
+                <br>
+                <label>
+                    Zip
+                    <input type="number" name="zip" id="zip-id" placeholder="Zip" value="{{cars.zip}}" required disabled>
+                </label>
+                <br>
+                <br>
+           
+            {{#if bookFlag}}
+            <a href="/rentingInfo/find_date/{{cars._id}}">Book</a>
+            {{/if}}
+            <a href="/users/saveCar/{{cars._id}}">Save</a>
+             </form>
+        </div>
+  
+
+
+
+   {{/if}}
+
+
+ 
+   
+    <div>
+            {{#if reviews}}
+            {{#each reviews}}
+
+
+                <form class="view-form">
+                 <img src="/users/profilepic/{{userId}}" onerror="this.src='/public/images/blank-profile-picture-973460_640.png'" alt="Profile Picture" class="reviewerPic">
+                <label id="username-id">{{userName}} </label>
+                <label>( {{rating}} )</label> <br> 
+                 <label>{{comment}} </label><br><br>
+                {{#if lenderReply.length}}
+                    <label>Reply : {{lenderReply}} </label><br>
+                {{else}}
+               
+                {{/if}}
+                </form>
+            {{/each}}
+            {{else}}
+            <form class="view-form">
+                 <p class="message-class">Reviews not available</p>
+            </form>
+            {{/if}}
+    </div>
+   
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src ="../public/js/editUser.js"></script>

@@ -1,0 +1,316 @@
+.profilePic{
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border-color: black;
+    border: width 5;
+}
+
+.carPicture{
+  object-fit: contain;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    border-color: black;
+    border: width 5;
+}
+
+#useredit-form-id{
+float: right;
+}
+
+#profilepictureForm{
+  float: left;
+}
+.message-succ{
+  font-weight: bold;
+  color:green;
+}
+
+#carprofile-form-id{
+  float:left;
+}
+
+.view-form{
+  float:right;
+  text-align:left;
+  
+}
+
+.carPicturesUpdate{
+  float:left;
+}
+
+.slide {
+  width: auto;
+  height: 500px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+
+.carHomePic{
+  object-fit: contain;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border-color: black;
+  border: width 5;
+}
+
+.reviewerPic{
+  object-fit: cover;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border-color: black;
+  border: width 5;
+}
+
+#username-id{
+  text-align: center;
+}
+
+.carProfileNA{
+  object-fit: contain;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border-color: black;
+  border: width 5;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.carDashboardPic{
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border-color: black;
+  border: width 5;
+}
+
+
+
+.carDetails{
+  float:left;
+}
+
+.reviews{
+  float:right;
+}
+
+
+html { 
+    background: url(../images/car.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+form{
+        margin:0 auto; 
+        width:500px;
+        padding:30px;
+        background:#f9f9f9;
+        border:2px solid #333;
+        text-align: center;
+        
+}
+
+.dashboard-class{
+    margin:0 auto; 
+    width:fit-content;
+    padding:5px;
+    background:white;
+    border:2px solid #333;
+    align-content: center;
+    font-size:small;
+    text-align: center;
+}
+
+.search-form{
+  width:1100px;
+  background:white;
+  border:2px solid #333;
+}
+
+
+h1{
+    color:black;
+    font-weight: bold;
+    text-align: center;
+    background:white;
+    border:2px solid #333;
+}
+h2{
+    color:home;
+    font-weight: bold;
+    text-align: center;
+    background:white;
+    border:2px solid #333;
+    
+}
+h3{
+  color:home;
+  font-weight: bold;
+  text-align: center;
+  background:black;
+  border:2px solid #333;
+  color:white;
+}
+
+.topnav {
+    background-color: white;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+
+  
+  /* Style the links inside the navigation bar */
+ .login {
+    color: rgb(245, 20, 20);
+    font-size: 17px;
+    width: 30%;
+    font-weight: bold;
+    background-color: white;
+  }
+
+
+
+
+#saved-id{
+    float: right;
+}
+
+#car-id{
+  float: right;
+}
+
+
+#logout-id{
+    float: right;
+}
+
+#profile-id{
+    float: right;
+}
+
+#edit-id{
+    float: right;
+}
+
+
+.table-center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+
+table{
+    table-layout: auto;
+    text-align: center;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 15px;
+    width:auto;
+    white-space: nowrap;
+   
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Float four columns side by side */
+  .column {
+    float: left;
+    width: 20%;
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding in columns */
+  .row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+    border:2px solid #333;
+  }
+  
+  /* Responsive columns - one column layout (vertical) on small screens */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 80%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+
+  .message-class{
+    font-size: medium;
+  }
+
+  .error{
+    color:red;
+    font-weight: bold;
+  }
+
+label{
+  font-weight: bold;
+}
+
+
+.homeheading{
+  font-weight: bolder;
+  background-color:black;
+    color:home;
+  color:white;
+  font-size: large;
+}
+
+.homecarheading{
+  font-weight: bolder;
+  background-color:peachpuff;
+    color:black;
+  font-size: large;
+}
+
+#caraddress-id{
+  float:left
+}
+
+
+

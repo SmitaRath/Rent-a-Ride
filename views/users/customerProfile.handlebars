@@ -1,0 +1,54 @@
+ <div>
+ <form id="profile-form-id">
+    <img src="/users/profilepic/{{id}}" onerror="this.src='/public/images/blank-profile-picture-973460_640.png'" alt="Profile Picture" class="profilePic">
+    <br>
+    <br>
+    <label>
+        First Name 
+        <input type="text"  name="firstName" id="firstNameP-id" placeholder="First Name" value="{{users.firstName}}" required disabled>
+    </label>
+    <br>
+    <br>
+    <label>
+        Last Name 
+        <input type="text" name="lastName" id="lastNameP-id" placeholder="Last Name" value="{{users.lastName}}" disabled>
+    </label>
+    <br>
+    <br>
+    <label>
+        Date Of Birth 
+        <input type="date" name="dob" id="dobP-id" required value="{{users.dob}}" disabled>
+    </label>
+    <br>
+    <br>
+    <label>
+        Email Id/Username 
+        <input type="email" name="emailID" id="emailP-id" placeholder="Email Id" required value="{{users.emailID}}" disabled>
+    </label>
+
+    <br>
+    <br>
+    <label> 
+        Driver's License Number 
+        <input name="driverLicense" id="driverLicenseP-id" placeholder="Driver's License Number" required value="{{users.driverLicense}}" disabled>
+    </label>
+    <br>
+    <br>
+    <label>
+        City
+        <input name="city" type="text" id="cityP-id" placeholder="city" required value="{{users.city}}" disabled>
+    </label>
+    <br>
+    <br>
+    <label>
+        State
+        <input name="state" type="text" id="stateP-id" placeholder="State" required value="{{users.state}}" disabled>
+    </label>
+    <br>
+    <br>
+    <label>
+        Zip Code 
+        <input name="zip" type="number" id="zipP-id" placeholder="Zip Code" required value="{{users.zip}}" disabled>
+    </label>
+    </form>
+    </div>

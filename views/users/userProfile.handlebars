@@ -1,0 +1,191 @@
+ <div class="topnav">
+    <a href="/home">Home</a>
+    <a href="/users/rented">Rented Car</a>
+    <a href="/users/history">Past Rented Cars</a>
+    <a href="/users/posted">My Cars</a>
+    <a href="/users/orders">Orders</a>
+     <a href="/users/saved" id="saved-id">Saved Cars</a>
+     <a href="/users/profile" id="profile-id">Profile</a>
+     <a href="/users/editUser" id="edit-id">Edit Profile</a>
+     <a href="/cars/createCar" id="car-id">Post Car</a>
+    <a href="/users/logout" id="logout-id">Logout</a>
+    </div>
+
+    <h1>Welcome {{users.firstName}} {{users.lastName}}</h1>
+   
+
+    <div>
+    {{#if profileFlag}}
+    <form id="profile-form-id">
+    <img src="/users/profilepic/{{id}}" onerror="this.src='/public/images/blank-profile-picture-973460_640.png'" alt="Profile Picture" class="profilePic">
+    <br>
+    <br>
+    <label>
+        First Name 
+        <input type="text"  name="firstName" id="firstNameP-id" placeholder="First Name" value="{{users.firstName}}" required disabled>
+    </label>
+    <br>
+    <br>
+    <label>
+        Last Name 
+        <input type="text" name="lastName" id="lastNameP-id" placeholder="Last Name" value="{{users.lastName}}" disabled>
+    </label>
+    <br>
+    <br>
+    <label>
+        Date Of Birth 
+        <input type="date" name="dob" id="dobP-id" required value="{{users.dob}}" disabled>
+    </label>
+    <br>
+    <br>
+    <label>
+        Email Id/Username 
+        <input type="email" name="emailID" id="emailP-id" placeholder="Email Id" required value="{{users.emailID}}" disabled>
+    </label>
+
+    <br>
+    <br>
+    <label> 
+        Driver's License Number 
+        <input name="driverLicense" id="driverLicenseP-id" placeholder="Driver's License Number" required value="{{users.driverLicense}}" disabled>
+    </label>
+    <br>
+    <br>
+    <label>
+        City
+        <input name="city" type="text" id="cityP-id" placeholder="city" required value="{{users.city}}" disabled>
+    </label>
+    <br>
+    <br>
+    <label>
+        State
+        <input name="state" type="text" id="stateP-id" placeholder="State" required value="{{users.state}}" disabled>
+    </label>
+    <br>
+    <br>
+    <label>
+        Zip Code 
+        <input name="zip" type="number" id="zipP-id" placeholder="Zip Code" required value="{{users.zip}}" disabled>
+    </label>
+    </form>
+    {{/if}}
+    </div>
+
+    <div>
+    {{#if editFlag}}
+ 
+    <form id="profilepictureForm" action="/users/upload/profilepic"  enctype="multipart/form-data" method="POST"> 
+     <p class="homeheading">Change your profile picture</p>
+    <img src="/users/profilepic/{{id}}" onerror="this.src='/public/images/blank-profile-picture-973460_640.png'" alt="Profile Picture" class="profilePic">
+    <br>
+    <br>
+            <label>
+            <input type="file" name="profilePicture" accept=".png, .jpeg, .jpg" class="btn" required/>
+            </label>
+        
+            <input type="submit" value="Upload and Submit"/>
+
+            {{#if error}}
+            <p class="error">{{error}}</p>
+             {{/if}}
+    </form>
+    
+
+   
+   
+    <form id="useredit-form-id" method="POST" action="/users/editUser">
+       <p class="homeheading">Change your Profile details</p>
+        <br>
+        <br>
+    <label>
+        First Name *
+        <input type="text" name="firstName" id="firstName-id" placeholder="First Name" value="{{users.firstName}}" required>
+    </label>
+    <br>
+    <br>
+    <label>
+        Last Name 
+        <input type="text" name="lastName" id="lastName-id" placeholder="Last Name" value="{{users.lastName}}">
+    </label>
+    <br>
+    <br>
+    <label>
+        Date Of Birth *
+        <input type="date" name="dob" id="dob-id" required value="{{users.dob}}">
+    </label>
+
+    <br>
+    <br>
+    <label> 
+        Driver's License Number *
+        <input name="driverLicense" id="driverLicense-id" placeholder="Driver's License Number" required value="{{users.driverLicense}}">
+    </label>
+    <br>
+    <br>
+    <label>
+        Zip Code *
+        <input name="zip" type="number" id="zip-id" placeholder="Zip Code" required value="{{users.zip}}">
+    </label>
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+
+    <div id="diverror-id" class="error">
+    
+    <ul id="errorlist-id">
+      {{#if hasErrors}}
+    {{#each errors}}
+    <li>
+      {{this}}
+    </li>
+    {{/each}}
+    {{/if}}
+   </ul>
+
+    {{#if success}}
+    <p class="message-succ">{{message}}</p>
+    {{/if}}
+    </div> 
+    </form>
+
+
+    <form id="password-form-id" action="/users/changePassword" method="POST">
+    <p class="homeheading">Change your Password</p>
+    <label>
+        New Password *
+        <input type="password" name="password" id="password-id" required placeholder="password">
+    </label>
+    <br>
+    <br>
+    <label>
+        Confirm Password *
+        <input type="password" name="confirm" id="confirm-id" required placeholder="confirm password">
+    </label>
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+
+
+      <div id="divpassworderror-id" class="error">
+    
+    <ul id="passworderrorlist-id">
+      {{#if hasErrorsPass}}
+    {{#each errorsPass}}
+    <li>
+      {{this}}
+    </li>
+    {{/each}}
+    {{/if}}
+   </ul>
+
+    {{#if successPass}}
+    <p class="message-succ">{{message}}</p>
+    {{/if}}
+    </div> 
+    </form>
+
+    {{/if}}
+    </div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src ="../public/js/editUser.js"></script>

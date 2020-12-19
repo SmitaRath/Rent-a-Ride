@@ -1,0 +1,26 @@
+<div class="topnav">
+    <a href="/home" >Sign-out</a>
+</div>
+
+<div><br><br>
+    <form>
+        <label>Total Number of reviews submitted: {{reviewsLength}}</label><br><br>
+        <label>Total Number of reviews with Owners Reply: {{countLender}}</label>
+    </form>
+    {{#each adminVar}}
+        <form id="adminDelete" method="POST" action="/admin/adminDelete">
+            <img src="/users/profilepic/{{userId}}" onerror="this.src='/public/images/blank-profile-picture-973460_640.png'" alt="Profile Picture" class="reviewerPic">
+            <label id="username-id"> Comment Posted by: {{userName}} </label><br>
+            <label> For car: {{carName}}</label> <br> 
+            <label>With Overall Rating: {{rating}} </label> <br> 
+            <label> The comments are: {{comment}} </label><br>
+            <label><input name="id" value="{{_id}}" hidden></label>
+            {{#if lenderReply.length}}
+                <label>The owners Reply : {{lenderReply}} </label><br>
+            {{else}}
+            
+            {{/if}}
+            <input type="submit" value="Delete Review"/>
+        </form>
+    {{/each}}
+</div>
