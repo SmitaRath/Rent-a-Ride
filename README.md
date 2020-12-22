@@ -23,7 +23,7 @@ Shaunak Saklikar
 7. Once user creation is done, user dashboard will be available to the user.
 8. Edit Profile -User can edit the profile from edit profile option.
 9. Home -Now user is logged in, can go the home page and search for cars according to his/her choice and can go the car profile page to book the car or add to the save list.
-10. Book - From the book button available in car profile page user can book a particular page by giving start date and end date
+10. Book - From the book button available in car profile page user can book a particular car by giving start date and end date
 11. Once booking is done, status will be pending for approval by the owner.
 12. Post car - User can also post a car from post your car.
 13. My cars- Users can upload pictures by going to my cars page and can upload pictures.
