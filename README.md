@@ -1,6 +1,7 @@
 # Rent-A-Ride
 
-Rent-a-Ride is an online platform for renters to book a car posted by individual car owners, which eases the renting process by minimizing the cost, complexity and overhead of renting
+Rent-a-Ride is an online platform for renters to book a car posted by individual car owners, which eases the renting process by minimizing the cost, complexity and overhead of renting.
+
 The platform provides any user to search cars of choice, post reviews, check activity history, sort highly reviewed cars, and easily locate pick-up and drop-off points in maps.
 
 ## Group Members
